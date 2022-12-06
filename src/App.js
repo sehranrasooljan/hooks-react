@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import React, {useState} from "react";
+
+console.log("Outside App components")
+
+const App = () => {
+  let [coins, setCoins] = useState(0)
+
+  console.log("Inside App components")
+
+   function inc(){
+      //  coins  = coins+1
+      setCoins(coins+1)
+   }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>{coins}</h1>
+      <button onClick={inc}>Increase</button>
     </div>
   );
 }
+
+
+
+
 
 export default App;
